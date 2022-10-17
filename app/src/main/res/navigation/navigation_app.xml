@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_app"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/pokemonListFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -21,9 +21,8 @@
         android:label="fragment_details_pokemon"
         tools:layout="@layout/fragment_details_pokemon" >
         <argument
-            android:name="pokemonId"
-            app:argType="string"
-            android:defaultValue=""/>
+            android:name="itemPokemon"
+            app:argType="com.juacodev.pokedexapp.data.models.PokemonPresenter" />
     </fragment>
     <fragment
         android:id="@+id/pokemonListFragment"

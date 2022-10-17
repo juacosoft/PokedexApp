@@ -8,12 +8,14 @@
     android:id="@+id/item_container"
     android:layout_margin="20dp"
     app:cardCornerRadius="30dp"
+
     android:verticalScrollbarPosition="defaultPosition"
     app:cardElevation="3dp">
 
   <androidx.constraintlayout.widget.ConstraintLayout
       android:layout_width="match_parent"
       android:layout_height="match_parent"
+      android:background="@drawable/bg_item_gradient"
       >
       <ImageView
           android:id="@+id/iv_image_pokemon"

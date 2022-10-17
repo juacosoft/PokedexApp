@@ -8,13 +8,14 @@
         <entry key="app/src/main/res/drawable/bg_home_menu_button_1_idle.xml" value="0.1445" />
         <entry key="app/src/main/res/drawable/bg_home_menu_button_1_press.xml" value="0.1445" />
         <entry key="app/src/main/res/drawable/bg_home_menu_button_style2.xml" value="0.1445" />
+        <entry key="app/src/main/res/drawable/bg_item_gradient.xml" value="0.1945" />
         <entry key="app/src/main/res/drawable/button_menu_selector.xml" value="0.1445" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3799606396513684" />
-        <entry key="app/src/main/res/layout/fragment_details_pokemon.xml" value="0.24479166666666666" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.24583333333333332" />
+        <entry key="app/src/main/res/layout/fragment_details_pokemon.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.21132075471698114" />
         <entry key="app/src/main/res/layout/fragment_pokemons_list.xml" value="0.2858062744140626" />
         <entry key="app/src/main/res/layout/home_fragment.xml" value="0.24479166666666666" />
-        <entry key="app/src/main/res/layout/itemo_pokemon.xml" value="0.24479166666666666" />
+        <entry key="app/src/main/res/layout/itemo_pokemon.xml" value="0.1" />
         <entry key="app/src/main/res/layout/layout_error.xml" value="0.24583333333333332" />
         <entry key="app/src/main/res/layout/layout_loading.xml" value="0.24479166666666666" />
         <entry key="app/src/main/res/menu-v26/activity_menu.xml" value="0.24479166666666666" />

@@ -76,5 +76,7 @@ class PokemonListFragment :BaseFragment<FragmentPokemonsListBinding>(FragmentPok
     }
     private fun adapterDoClick(itemPokemon:PokemonPresenter, pos:Int){
         Log.d("TAG-55", "adapterDoClick: ${itemPokemon.name} Id: $pos")
+        val action = PokemonListFragmentDirections.actionPokemonListFragmentToDetailsPokemonFragment(itemPokemon)
+        findNavController().navigate(action)
     }
 }

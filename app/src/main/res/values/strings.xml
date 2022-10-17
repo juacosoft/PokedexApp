@@ -3,7 +3,10 @@
     <string name="menu_settings">Settings</string>
     <string name="pokemons">Pokemons</string>
     <string name="Items">Items</string>
-    <string name="movies">Movies</string>
+    <string name="moves">Moves</string>
     <string name="Types">Types</string>
     <string name="Favorites">Favorites</string>
+    <string name="pokemon_image">pokemon name</string>
+    <string name="Abilities">Abilities</string>
+    <string name="Evolution">Evolution</string>
 </resources>

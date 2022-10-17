@@ -1,6 +1,7 @@
 package com.juacodev.pokedexapp.data.network
 
 import android.util.Log
+import com.juacodev.pokedexapp.data.models.PokemonDetailR
 import com.juacodev.pokedexapp.data.models.PokemonModelR
 import com.juacodev.pokedexapp.data.models.PokemonPresenter
 import kotlinx.coroutines.Dispatchers
@@ -24,10 +25,10 @@ class PokedexRemoteService @Inject constructor(
     }
     suspend fun getPokemonDetail(
         id:Int
-    ):PokemonPresenter{
+    ):PokemonDetailR{
         return withContext(Dispatchers.IO){
             val response = pokedexApi.getPokemonById(id)
-            response.body()?.tolocalPresenter()!!
+            response.body()!!
         }
     }
 

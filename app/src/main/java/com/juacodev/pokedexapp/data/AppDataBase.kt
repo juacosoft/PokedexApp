@@ -4,10 +4,12 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.juacodev.pokedexapp.data.local.PokedexDao
-import com.juacodev.pokedexapp.data.models.PokemonModelR
-import com.juacodev.pokedexapp.data.models.PokemonPresenter
+import com.juacodev.pokedexapp.data.models.*
 
-@Database(entities = [PokemonPresenter::class], version = 1, exportSchema = false)
+@Database(entities = [
+    PokemonPresenter::class,
+    PokemonDetailPresenter::class
+                     ], version = 2, exportSchema = false)
 @TypeConverters(ObjectConverters::class)
 abstract class AppDataBase :RoomDatabase() {
     abstract fun pokedexDao(): PokedexDao

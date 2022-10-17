@@ -26,13 +26,10 @@ class HomeViewModel @Inject constructor(
         viewModelScope.launch(Dispatchers.IO) {
             useCase.getPokemonListRemote(limit,offset).collect {
                 when(it){
-                    is Resource.Success -> {
-                        _pokemonListLiveData.postValue(it)
-                    }
                     is Resource.Error -> {
                         fetchLocal()
                     }
-                    is Resource.Loading -> {
+                    is Resource.Loading,is Resource.Success -> {
                         _pokemonListLiveData.postValue(it)
                     }
                     is Resource.OnSearch -> {

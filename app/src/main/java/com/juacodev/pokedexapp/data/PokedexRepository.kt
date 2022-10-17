@@ -3,8 +3,11 @@ package com.juacodev.pokedexapp.data
 import android.util.Log
 import com.juacodev.pokedexapp.data.local.PokedexDao
 import com.juacodev.pokedexapp.data.network.PokedexRemoteService
+import com.juacodev.pokedexapp.util.Resource
 import com.juacodev.pokedexapp.util.networkBoundResource
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
 class PokedexRepository @Inject constructor(
@@ -23,16 +26,14 @@ class PokedexRepository @Inject constructor(
         }
 
     )
-    fun getPokemonLocalRemote(id:Int) = networkBoundResource(
-        query = {
-            local.getPokemonById(id.toString())
-        }, fetch = {
-            delay(2000)
-            api.getPokemonDetail(id)
-        },
-        saveFetchResult = {pokemon->
-            local.insertPokemon(pokemon)
+    fun getRemotePokemonDetails(id: Int)= flow {
+        emit(Resource.Loading())
+        try {
+            val response = api.getPokemonDetail(id)
+            local.insertPokemonDetails(response.toLocalPresenter())
+            emit(Resource.Success(response))
+        }catch (e:Exception){
+            emit(Resource.Error(e))
         }
-
-    )
+    }
 }

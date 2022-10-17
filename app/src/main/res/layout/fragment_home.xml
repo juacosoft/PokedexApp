@@ -64,7 +64,7 @@
                 android:id="@+id/btn_moves"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/movies"
+                android:text="@string/moves"
                 android:layout_columnSpan="1"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
