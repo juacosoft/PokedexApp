@@ -3,8 +3,14 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'com.google.dagger.hilt.android'
+    id 'androidx.navigation.safeargs.kotlin'
 }
-
+def getSecretKeys(){
+    def keyFile = file("pokedexapp.properties")
+    def secretKeys = new Properties()
+    secretKeys.load(new FileInputStream(keyFile))
+    return secretKeys
+}
 android {
     compileSdk 32
 
@@ -30,7 +36,15 @@ android {
     buildTypes {
         release {
             minifyEnabled false
+            buildConfigField "String", "BASE_URL", getSecretKeys().getProperty("BASE_URL")
+            buildConfigField "String", "IMAGE_PATH", getSecretKeys().getProperty("BASE_URL_IMAGES")
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug{
+            applicationIdSuffix ".debug"
+            debuggable true
+            buildConfigField "String", "BASE_URL", getSecretKeys().getProperty("BASE_URL")
+            buildConfigField "String", "IMAGE_PATH", getSecretKeys().getProperty("BASE_URL_IMAGES")
         }
     }
     compileOptions {
@@ -66,6 +80,9 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
     // LiveData
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.5.1"
+    //navigation
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.2'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.5.2'
     //daggerhilt
     implementation "com.google.dagger:hilt-android:2.44"
     kapt "com.google.dagger:hilt-compiler:2.44"
