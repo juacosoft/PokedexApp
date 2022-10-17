@@ -5,16 +5,7 @@
     android:id="@+id/navigation_app"
     app:startDestination="@id/pokemonListFragment">
 
-    <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.juacodev.pokedexapp.ui.fragments.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
 
-        <action
-            android:id="@+id/action_homeFragment_to_pokemonListFragment"
-            app:destination="@id/pokemonListFragment" />
-    </fragment>
     <fragment
         android:id="@+id/detailsPokemonFragment"
         android:name="com.juacodev.pokedexapp.ui.fragments.DetailsPokemonFragment"
@@ -32,7 +23,6 @@
         <action
             android:id="@+id/action_pokemonListFragment_to_detailsPokemonFragment"
             app:destination="@id/detailsPokemonFragment"
-            app:popUpTo="@id/homeFragment"
             app:popUpToInclusive="true"
             />
 
