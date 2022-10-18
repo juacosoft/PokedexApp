@@ -16,8 +16,7 @@ class HomeFragment :BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infla
 
     override fun onViews() {
         binding.btnPokemon.safeClickListener {
-            val action = HomeFragmentDirections.actionHomeFragmentToPokemonListFragment()
-            findNavController().navigate(action)
+
         }
     }
     override fun onViewModels() {
